@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>я люблю пирожки с вишней</title>
+    <meta name="viewport" content="width=device-width">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{ссылка}">
+    <meta property="og:title" content="название">
+    <meta property="og:description" content="текст">
+    <meta property="og:image" content="{картинка}">
+    <script src="javascripts/jquery-3.6.0.js" charset="utf-8"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+
+    <style media="screen">
+      .box{
+        width: 100px;
+        height: 100px;
+        display:inline-block;
+        margin: 30px;
+      }
+      .emo{
+        background: rgba(255, 115, 190, 1);
+      }
+      .lyubov{
+        background: rgba(219, 255, 0, 1);
+      }
+      .goth{
+        background: rgba(0, 117, 255, 1);
+      }
+      .black{
+        background: black;
+      }
+      #sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+     #sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
+     #sortable li span { position: absolute; margin-left: -1.3em; }
+     img {
+       width: 100px;
+     }
+
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $(".emo").click(function(){
+          $(this).toggleClass("black");
+        });
+      }); // если класс есть он его добавляет, если нет то убирает
+//.ready(function(){ дожидается, что страница прогрузит, и после js будет приступать к своей работе
+      $( function() {
+      $( "#sortable" ).sortable();
+      } );
+      $(document).ready(function(){
+        $("div").click(function(){
+          $(this).css({
+          width:function(index, value){
+            return parseFloat(value)+100;
+          }
+          });
+        });
+      });
+      $( function() {
+    $( "#dialog" ).dialog();
+  } );
+    $( function() {
+    $( ".draggable" ).draggable();
+    } );
+    $( function() {
+  $( ".accordion" ).accordion();
+} );
+    </script>
+    <div class="box emo super"></div>
+
+    <div class="box goth"></div>
+
+    <div class="box lyubov"></div>
+    <ul id = "sortable">
+      <li>саундтрек шрека</li>
+      <li>лапша острая</li>
+      <li>дюбели в стенах</li>
+      <li>шерстка котиков</li>
+      <li>кроксы с клубничками</li>
+      <li>ла ла ленд</li>
+      <li>печенье из песочного теста</li>
+    </ul>
+    <div id="dialog" title="чувство">
+  <p>в последнее время я чувствую себя, как переспевший томат "бычье сердце". он тяжелый и своим весом почти ломает веточку. он большой и закрывает доступ к свету для еще не поспевших помидоров. но смысла в его существовании нет. его кожица неприятно скукожилась.</p>
+    </div>
+    <div class="draggable">
+      <img src="images/b006a5a5f8d0.png" alt="">
+
+    </div>
+    <div class="accordion">
+      <h3>если тебе одиноко</h3>
+      <div>
+        <p>Если тебе одиноко <br>И слезки бегут ручьё-ём <br>И парни к тебе жестоки (А?) <br>Набери мой простой телефо-он <br>891617211312151</p>
+      </div>
+      <h3>а если сел твой мобильный</h3>
+      <div>
+        <p>Расстраиваться не спеши!<br>Сядь, успокойся, расслабься <br>И адрес мой запиши <br>Новокузнецкая область <br>Красногвардейский район <br>Поселок железно-дорожный, 24 дом</p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+.box{
+  width: 100px;
+  height: 100px;
+  display:inline-block;
+  margin: 30px;
+}
+.emo{
+  background: pink;
+}
+.lyubov{
+  background: rgba(219, 255, 0, 1);
+}
+.goth{
+  background: black;
+}
